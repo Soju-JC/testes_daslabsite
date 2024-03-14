@@ -62,7 +62,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
@@ -90,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-image','listing-title',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-date','listing-title','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description"],
     };
@@ -222,17 +222,17 @@ toggle.addEventListener('change', function() {
 </script> -->
 
 <!-- <link rel="stylesheet" id="theme-style"> -->
-<style>
+<!-- <style>
 
-/*   body {
+  body {
     background-color: black;
     margin: 0;
-  } */
+  }
 
-/* .hero_content {
+.hero_content {
     overflow-wrap: break-word !important;
-  } */
-/*   .hero {
+  }
+  .hero {
     display: flex;
     flex-direction: row;
     z-index: 1;
@@ -241,8 +241,8 @@ toggle.addEventListener('change', function() {
     padding-top: 0rem;
     padding-right: 0px;
     margin-right: 0px;
-  } */
-/*   @media (max-width: 1077px) {
+  }
+  @media (max-width: 1077px) {
      .gradient_bg {
       overflow-x: hidden !important;
       overflow-y: hidden !important;
@@ -251,17 +251,17 @@ toggle.addEventListener('change', function() {
       word-wrap: break-word;
       line-height: 0.7;
     }
-  } */
-/*   *, *::before, *::after {
+  }
+  *, *::before, *::after {
         white-space: normal !important; 
-  } */
+  }
  
-/*   @keyframes blink {
+  @keyframes blink {
     to {
       opacity: .0;
     }
-  } */
-</style>
+  }
+</style> -->
 
 <!-- <header class="hero"> -->
 <!-- <div class="container spacing"> -->
@@ -285,7 +285,8 @@ toggle.addEventListener('change', function() {
     <title>My awesome website</title>
       <link rel="stylesheet" href="styles.css">
   </head> -->
-  
+
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DasLab</title>
@@ -295,16 +296,16 @@ toggle.addEventListener('change', function() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 
-    
-        <section class="hero">
-            <div class="hero-inner">
-              <div class="col-twelve">
-                <h1 style="color: white;">Das<span style="color: white;">Lab</span></h1>
-                <h5 class="scroll-text">Laboratório de Data Science - UFES</h5><p></p>
-              </div>
-            </div>
-        </section>
-    
+
+  <section class="hero">
+      <div class="hero-inner">
+        <div class="col-twelve">
+          <h1 style="color: white;">Das<span style="color: white;">Lab</span></h1>
+          <h5 class="scroll-text">Laboratório de Data Science - UFES</h5><p></p>
+        </div>
+      </div>
+  </section>
+
 
     
 <div class="layout_sobre">
@@ -356,45 +357,120 @@ font-weight: 700;
 
 </h1>
 <div id="listing-tutoriais" class="quarto-listing quarto-listing-container-grid">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-tutoriais-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-tutoriais'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+     </select>
+  </div>
+</div>
 <div class="list grid quarto-listing-cols-4">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1593572400000" data-listing-file-modified-sort="1708969837930" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
+<div class="g-col-1" data-index="0" data-categories="Texto,Texto,Texto" data-listing-date-sort="1593572400000" data-listing-file-modified-sort="1710390346806" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
 <a href="./tutoriais/teste4/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./tutoriais/teste4/capa-netflixdenovo.jpg" class="thumbnail-image card-img" style="height: 350px;">
+<img src="./tutoriais/teste4/capa-netflixdenovo.jpg" class="thumbnail-image card-img" style="height: 325px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Analisando o melhor canal do YouTube
 </h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+</div>
+<div class="card-text listing-description">
+Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jul 1, 2020
+</div>
+</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1592794800000" data-listing-file-modified-sort="1708969758581" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
+<div class="g-col-1" data-index="1" data-categories="Texto,Texto,Texto" data-listing-date-sort="1592794800000" data-listing-file-modified-sort="1710390313972" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
 <a href="./tutoriais/teste/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./tutoriais/teste/capa-netflix2.jpg" class="thumbnail-image card-img" style="height: 350px;">
+<img src="./tutoriais/teste/capa-netflix2.jpg" class="thumbnail-image card-img" style="height: 325px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Usando animações para entender conceitos estatísticos: o passeio aleatório do Pacman
 </h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+</div>
+<div class="card-text listing-description">
+Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jun 22, 2020
+</div>
+</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1591585200000" data-listing-file-modified-sort="1708969726999" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
+<div class="g-col-1" data-index="2" data-categories="Texto,Texto,Texto" data-listing-date-sort="1591585200000" data-listing-file-modified-sort="1710390253956" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
 <a href="./tutoriais/netflix/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./tutoriais/netflix/capa-netflix.jpg" class="thumbnail-image card-img" style="height: 350px;">
+<img src="./tutoriais/netflix/capa-netflix.jpg" class="thumbnail-image card-img" style="height: 325px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Construindo playlists no Spotify a partir de modelos probabilísticos
 </h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+</div>
+<div class="card-text listing-description">
+Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jun 8, 2020
+</div>
+</div>
 </div>
 </div>
 </a>
@@ -403,12 +479,31 @@ Construindo playlists no Spotify a partir de modelos probabilísticos
 <a href="./tutoriais/myanimelist/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./tutoriais/myanimelist/capa-myanimelist.jpg" class="thumbnail-image card-img" style="height: 350px;">
+<img src="./tutoriais/myanimelist/capa-myanimelist.jpg" class="thumbnail-image card-img" style="height: 325px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Interpretabilidade em modelos preditivos – discussões iniciais na área da saúde
 </h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Saúde'); return false;">
+Saúde
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Teoria'); return false;">
+Teoria
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Modelos Preditivos'); return false;">
+Modelos Preditivos
+</div>
+</div>
+<div class="card-text listing-description">
+Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jun 1, 2020
+</div>
+</div>
 </div>
 </div>
 </a>
@@ -436,59 +531,153 @@ font-weight: 700;
 
 </h1>
 <div id="listing-projetos" class="quarto-listing quarto-listing-container-grid">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-projetos-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-projetos'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+     </select>
+  </div>
+</div>
 <div class="list grid quarto-listing-cols-4">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1578106800000" data-listing-file-modified-sort="1708970117801" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
+<div class="g-col-1" data-index="0" data-categories="Texto,Texto,Texto" data-listing-date-sort="1578106800000" data-listing-file-modified-sort="1710390450308" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
 <a href="./projetos/teste5/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./projetos/teste5/capa-netflixdenovo.jpg" class="thumbnail-image card-img" style="height: 350px;">
+<img src="./projetos/teste5/capa-netflixdenovo.jpg" class="thumbnail-image card-img" style="height: 325px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Métodos de aprendizado de máquinas aplicados ao desenvolvimento de curvas de crescimento fetal personalizadas para a população brasileira
 </h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+</div>
+<div class="card-text listing-description">
+Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jan 4, 2020
+</div>
+</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-date-sort="1578020400000" data-listing-file-modified-sort="1708970119136" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
+<div class="g-col-1" data-index="1" data-categories="Texto,Texto,Texto" data-listing-date-sort="1578020400000" data-listing-file-modified-sort="1710390426131" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
 <a href="./projetos/teste2/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./projetos/teste2/capa-netflixdenovo.jpg" class="thumbnail-image card-img" style="height: 350px;">
+<img src="./projetos/teste2/capa-netflixdenovo.jpg" class="thumbnail-image card-img" style="height: 325px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Modelos de Regressão Quantı́lica Bayesianos para Variáveis Resposta Multidimensionais
 </h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+</div>
+<div class="card-text listing-description">
+Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jan 3, 2020
+</div>
+</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-date-sort="1577934000000" data-listing-file-modified-sort="1708970021796" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
+<div class="g-col-1" data-index="2" data-categories="Texto,Texto,Texto" data-listing-date-sort="1577934000000" data-listing-file-modified-sort="1710390400549" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
 <a href="./projetos/netflix2/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./projetos/netflix2/capa-netflix.jpg" class="thumbnail-image card-img" style="height: 350px;">
+<img src="./projetos/netflix2/capa-netflix.jpg" class="thumbnail-image card-img" style="height: 325px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 Classificação de Perfis de Violência contra adolescentes no Espı́rito Santo
 </h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+</div>
+<div class="card-text listing-description">
+Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jan 2, 2020
+</div>
+</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-categories="Texto" data-listing-date-sort="1577847600000" data-listing-file-modified-sort="1708969975708" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
+<div class="g-col-1" data-index="3" data-categories="Texto,Texto,Texto" data-listing-date-sort="1577847600000" data-listing-file-modified-sort="1710390375749" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1">
 <a href="./projetos/myanimelist2/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
-<img src="./projetos/myanimelist2/capa-myanimelist.jpg" class="thumbnail-image card-img" style="height: 350px;">
+<img src="./projetos/myanimelist2/capa-myanimelist.jpg" class="thumbnail-image card-img" style="height: 325px;">
 </p>
 <div class="card-body post-contents">
 <h5 class="no-anchor card-title listing-title">
 EnsinaR
 </h5>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Texto'); return false;">
+Texto
+</div>
+</div>
+<div class="card-text listing-description">
+Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto Texto…
+</div>
+<div class="card-attribution card-text-small end">
+<div class="listing-date">
+Jan 1, 2020
+</div>
+</div>
 </div>
 </div>
 </a>
