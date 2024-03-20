@@ -2746,3 +2746,49 @@ body{
 		font-weight: 500;
 	  }
 }
+
+@media only screen and (max-width:480px) {
+	.team .member .pic {
+		overflow: hidden;
+		width: 100%;
+		border-radius: 50%;
+		grid-template-columns: 1fr 1fr;
+		margin-left: -25px;
+		display:inline-block;
+		align-items: center;
+		justify-content: flex-start;
+	  }
+	  .team .member .member-info {
+		padding-left: 5px;
+		grid-template-columns: 1fr 1fr;
+		font-size: 5px;
+	  }
+	  .team .member .member-info h5 {
+		padding-left: 0px;
+		grid-template-columns: 1fr 1fr;
+		font-size: 5px;
+	  }
+	  .team .member .social a{
+		margin-top: 12px;
+		height: 19px;
+		width: 19px;
+	  }
+	  .team .member .social img{
+		height: 15px;
+		width: 15px;
+	  }
+	  .team .member .member-heading {
+		font-weight: 700;
+		margin-bottom: 5px;
+		font-size: 7px;
+		color: #556270;
+		line-height: 1.2;
+	  }
+	  .team .member span {
+		display: block;
+		font-size: 5px;
+		padding-bottom: 10px;
+		position: relative;
+		font-weight: 500;
+	  }
+}
