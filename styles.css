@@ -2761,12 +2761,12 @@ body{
 	  .team .member .member-info {
 		padding-left: 5px;
 		grid-template-columns: 1fr 1fr;
-		font-size: 5px;
+		font-size: 7px;
 	  }
 	  .team .member .member-info h5 {
 		padding-left: 0px;
 		grid-template-columns: 1fr 1fr;
-		font-size: 5px;
+		font-size: 7px;
 	  }
 	  .team .member .social a{
 		margin-top: 12px;
@@ -2780,13 +2780,13 @@ body{
 	  .team .member .member-heading {
 		font-weight: 700;
 		margin-bottom: 5px;
-		font-size: 7px;
+		font-size: 9px;
 		color: #556270;
 		line-height: 1.2;
 	  }
 	  .team .member span {
 		display: block;
-		font-size: 5px;
+		font-size: 7px;
 		padding-bottom: 10px;
 		position: relative;
 		font-weight: 500;
